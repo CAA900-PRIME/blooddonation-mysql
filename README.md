@@ -7,10 +7,6 @@ Ensure Docker installed, please follow the instructions from here: [docker insta
 ### Database
 This is the database used for the web application which must be running first and ensure that all tables are created successfully before running the web application.
 
-```bash
-docker network create blooddonation_network
-```
-
 Ensure a custom network container, where all the containers such as MySQL and flask application can communicate with each other.
 
 ```bash
@@ -20,7 +16,6 @@ docker network create blooddonation-network
 ```bash
 docker build -t blooddonation-mysql .
 ```
-
 ##### Next will run the image in a container.
 ```bash
 docker run --name blooddonation_db --network blooddonation-network -v mysql_data:/var/lib/mysql -d blooddonation-mysql
