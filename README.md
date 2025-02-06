@@ -1,5 +1,8 @@
-### Project Overview - Blood Donation Web Application
+### Project Overview - Blood Donation Database
 This web application is designed to simplify blood donation by directly connecting donors and requester without intermediaries. All users register under a single system, where they can act as both donors and requesters. Once registered, users needing blood can submit a request, while donors simply wait to receive notifications about nearby requests. The goal is to make the donation process faster and more efficient, reducing the time involved in finding a suitable donor. The platform prioritizes simplicity, ensuring a user-friendly experience with minimal steps.
+
+#### Prerequisites
+Ensure Docker installed, please follow the instructions from here: [docker installation](https://docs.docker.com/engine/install/) For [MacOS](https://docs.docker.com/desktop/setup/install/mac-install/)
 
 ### Database
 This is the database used for the web application which must be running first and ensure that all tables are created successfully before running the web application.
@@ -7,7 +10,7 @@ This is the database used for the web application which must be running first an
 ```bash
 docker network create blooddonation_network
 ```
-#### Prerequisites
+
 Ensure a custom network container, where all the containers such as MySQL and flask application can communicate with each other.
 
 ```bash
