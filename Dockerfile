@@ -11,4 +11,5 @@ ENV MYSQL_PASSWORD=flask_password
 EXPOSE 3306
 
 # Optionally: You can place custom SQL initialization files if needed
+# The database will ensure to create all the tables provided within the init.sql
 COPY ./init.sql /docker-entrypoint-initdb.d/

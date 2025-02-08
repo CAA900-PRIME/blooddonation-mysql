@@ -31,3 +31,27 @@ docker run --name mysql_db \
 >[!NOTE]
 >To ensure data persistence, the database will store all data on the host machine, even if the container is stopped or removed.
 
+### To access mysql container
+To access the container must run the following command
+
+```bash
+docker exec -it blooddonation_db bash
+```
+
+Next will run mysql
+
+```bash
+mysql -u flask_user -p
+```
+
+Next it will prompt you asking for the password, the default password for the database for now will be `flask_password` will be changed later in production.
+
+### Mysql queries
+
+Here are list of commands you need to know when using mysql
+
+1. `show databases;` this will show all the current databases.
+2. `use blooddonation;` this will select a specific database called (blooddonation).
+3. `show tables;` this will show all the current tables in that selected database.
+4. `select * from users;` this should show a list for rows of user data if there is any.
+5. To exit the mysql and the container, `CTRL+D`
