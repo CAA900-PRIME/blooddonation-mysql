@@ -13,5 +13,20 @@ CREATE TABLE IF NOT EXISTS users (
     lastLoggedIn DATETIME NULL
 );
 
+CREATE TABLE IF NOT EXISTS application (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    applicant_name VARCHAR(100) NOT NULL,
+    blood_type VARCHAR(3) NOT NULL,
+    application_type ENUM('Request', 'Donation') NOT NULL,
+    hospital_name VARCHAR(255) NULL,
+    location VARCHAR(255) NOT NULL,
+    contact_number VARCHAR(15) NOT NULL,
+    status ENUM('Pending', 'Approved', 'Rejected', 'Completed') DEFAULT 'Pending',
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+);
+
+
 -- Updated application table (testing commit issue)
 
