@@ -12,3 +12,6 @@ CREATE TABLE IF NOT EXISTS users (
     verifiedDate DATETIME NULL,
     lastLoggedIn DATETIME NULL
 );
+
+-- Updated application table (testing commit issue)
+
