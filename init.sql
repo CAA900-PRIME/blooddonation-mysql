@@ -26,6 +26,7 @@ CREATE TABLE IF NOT EXISTS application (
 	country VARCHAR(100) NOT NULL,
     city VARCHAR(100) NOT NULL,
 	contact_phone_number VARCHAR(15) NOT NULL,
+	appointment DATETIME NOT NULL,
     status ENUM('Pending', 'Approved', 'Rejected', 'Completed') DEFAULT 'Pending',
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
 	FOREIGN KEY (requester_id) REFERENCES users(id),
