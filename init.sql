@@ -7,6 +7,9 @@ CREATE TABLE IF NOT EXISTS users (
     firstName VARCHAR(50) NOT NULL,
     lastName VARCHAR(50) NOT NULL,
     dob DATE NOT NULL DEFAULT '1970-01-01',
+    home_address VARCHAR(255) NOT NULL,
+    country VARCHAR(20) NOT NULL,
+    city VARCHAR(20) NOT NULL,
     postalCode CHAR(7) NOT NULL DEFAULT 'A1A 1A1',
     createdDate DATETIME DEFAULT CURRENT_TIMESTAMP,
     verifiedDate DATETIME NULL,
@@ -28,7 +31,3 @@ CREATE TABLE IF NOT EXISTS application (
 	FOREIGN KEY (requester_id) REFERENCES users(id),
     FOREIGN KEY (doner_id) REFERENCES users(id)
 );
-
-
--- Updated application table (testing commit issue)
-
