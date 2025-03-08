@@ -19,7 +19,7 @@ CREATE TABLE IF NOT EXISTS users (
 CREATE TABLE IF NOT EXISTS application (
     id INT AUTO_INCREMENT PRIMARY KEY,
     requester_id INT NOT NULL,
-	doner_id INT NULL,
+	donor_id INT NULL,
     blood_type VARCHAR(3) NOT NULL,
     hospital_name VARCHAR(255) NOT NULL,
 	hospital_address VARCHAR(255) NOT NULL,
