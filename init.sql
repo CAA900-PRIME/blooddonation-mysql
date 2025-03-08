@@ -30,5 +30,5 @@ CREATE TABLE IF NOT EXISTS application (
     status ENUM('Pending', 'Approved', 'Rejected', 'Completed') DEFAULT 'Pending',
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
 	FOREIGN KEY (requester_id) REFERENCES users(id),
-    FOREIGN KEY (doner_id) REFERENCES users(id)
+    FOREIGN KEY (donor_id) REFERENCES users(id)
 );
