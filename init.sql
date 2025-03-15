@@ -19,14 +19,17 @@ CREATE TABLE IF NOT EXISTS users (
 
 CREATE TABLE IF NOT EXISTS application (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    user_id INT NOT NULL,
-    applicant_name VARCHAR(100) NOT NULL,
+    requester_id INT NOT NULL,
+	donor_id INT NULL,
     blood_type VARCHAR(3) NOT NULL,
-    application_type ENUM('Request', 'Donation') NOT NULL,
-    hospital_name VARCHAR(255) NULL,
-    location VARCHAR(255) NOT NULL,
-    contact_number VARCHAR(15) NOT NULL,
-    status ENUM('Pending', 'Approved', 'Rejected', 'Completed') DEFAULT 'Pending',
+    hospital_name VARCHAR(255) NOT NULL,
+	hospital_address VARCHAR(255) NOT NULL,
+	country VARCHAR(100) NOT NULL,
+    city VARCHAR(100) NOT NULL,
+	contact_phone_number VARCHAR(15) NOT NULL,
+	appointment DATETIME NOT NULL,
+    status VARCHAR(20) NOT NULL DEFAULT 'Pending',
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+	FOREIGN KEY (requester_id) REFERENCES users(id),
+    FOREIGN KEY (donor_id) REFERENCES users(id)
 );
