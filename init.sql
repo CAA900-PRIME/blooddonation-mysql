@@ -13,7 +13,8 @@ CREATE TABLE IF NOT EXISTS users (
     postalCode CHAR(7) NOT NULL DEFAULT 'A1A 1A1',
     createdDate DATETIME DEFAULT CURRENT_TIMESTAMP,
     verifiedDate DATETIME NULL,
-    lastLoggedIn DATETIME NULL
+    lastLoggedIn DATETIME NULL,
+    otp_secret VARCHAR(16) NULL  -- Added 2FA column
 );
 
 CREATE TABLE IF NOT EXISTS application (
