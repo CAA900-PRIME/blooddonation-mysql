@@ -7,6 +7,12 @@ The goal is to make the donation process faster and more efficient, reducing the
 Ensure Docker installed, please follow the instructions from here: [Windows](https://docs.docker.com/desktop/setup/install/windows-install/) For [MacOS](https://docs.docker.com/desktop/setup/install/mac-install/)
 ### Database
 This is the database used for the web application which must be running first and ensure that all tables are created successfully before running the web application.
+
+#### Diagram
+Here is our current design ER-Diagram.
+
+![](Diagram/diagram.png)
+
 ##### The following command will build mysql image.
 ```bash
 docker build -t blooddonation-mysql .
