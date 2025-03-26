@@ -18,7 +18,8 @@ CREATE TABLE IF NOT EXISTS users (
     blood_type VARCHAR(3) NOT NULL,
     sex VARCHAR(15) NOT NULL,
     reset_token VARCHAR(100) NULL,
-    reset_token_expiry DATETIME NULL
+    reset_token_expiry DATETIME NULL,
+	profile_pic LONGBLOB NULL
 );
 
 
